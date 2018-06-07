@@ -117,13 +117,13 @@ footer{
 	footer .footer-head{
 		letter-spacing: 2px;
 		margin-bottom: 15px;
-		color: #EEEEEE;
+		color: #FFFFFF;
 		font-size: 17px;
 	}
 	footer p{
 		font-size: 13px;
 		line-height: 1.5;
-		color: #CACACA;
+		color: #EEEEEE;
 	}
 	footer p .fas{
 		font-size: 12px;
@@ -144,4 +144,15 @@ footer{
 .loader-c .loader{
 	font-size: 50px;
 	color: #CCCCCC;
+}
+.textbox{
+	background: #EAEAEA;
+	display: block;
+	width: 100%;
+	margin: 15px 0;
+	padding: 12px 15px;
+	border: none;
+}
+textarea.textbox{
+	height: 160px;
 }

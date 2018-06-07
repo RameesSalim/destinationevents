@@ -1,8 +1,12 @@
 .intro{
 	height: 600px;
-	background: #222222;	
 	margin-top: 80px;
 }
+	.intro-content{
+		z-index: 1;
+		background: rgba(0,0,0,0.8);
+		height: 100%;
+	}
 	.intro-title{
 		font-weight: 300;
 		font-size: 70px;
@@ -20,6 +24,22 @@
 		margin-top: 30px;
 		display: inline-block;
 		text-decoration: none;
+	}
+.intro-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #222222;	
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center center;
+}
+	.intro-bg video{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 .about{
 	background: rgb(41, 41, 41);
@@ -54,7 +74,7 @@
 }
 	.promo .content{
 		height: 100%;
-		background: rgba(133, 68, 154, 0.5);
+		background: rgba(133, 68, 154, 0.6);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -72,7 +92,7 @@
 		background-size:cover;
 		background-position: center center;
 		background-image:url(../images/sample.jpg);
-		z-index: -1;
+		z-index: -10;
 		position: fixed;
 		top: 0;
 		left: 0;
