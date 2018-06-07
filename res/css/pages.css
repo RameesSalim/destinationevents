@@ -1,0 +1,160 @@
+.bg-white{
+	background: #FFFFFF;
+}
+.marginTop80{
+	margin-top: 80px;
+}
+.headerImage{
+	background-size:cover;
+	background-position: center center;
+	height: 400px;
+}
+.about,.services,.gallery{
+	padding: 80px 0;
+}
+h1.page-heading{
+	font-size: 46px;
+	letter-spacing: 2px; 
+	margin-bottom: 30px;
+}
+h2.page-heading{
+	font-size: 34px;
+	letter-spacing: 3px; 
+	margin-bottom: 30px;
+}
+p.page-text{
+	text-align: justify;
+	color: #A0A09F;
+	margin: 10px 0 20px; 
+	line-height: 1.6;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+}
+.page-container{
+	max-width: 976px;
+	margin: 0 auto;
+	width: 90%;
+}
+.team-grid{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+	.team-box{
+		display: inline-block;
+		width: 210px;
+		margin:10px;
+		background: #EEEEEE;
+	}
+	.team-box img,span{
+		display: block;
+		text-align: left;
+	}
+	.team-box .team-name{
+		margin: -50px 0 0;
+		padding: 0 20px;
+		font-size: 18px;
+		font-weight: bold;
+		letter-spacing: 1px;
+		color: #FFFFFF;
+	}
+	.team-box .team-position{
+		margin: -5px 0 0;
+		padding: 0 20px;
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: 1px;
+		color: #FFFFFF;
+		opacity: 0.8;
+	}
+
+.services h1{
+	margin-bottom: 60px;
+}
+.service-block{
+	display: inline-block;
+	text-decoration: none!important;
+	margin-bottom: 50px;
+}
+.service-block img{
+	width: 100%;
+}
+.service-block h4{
+	font-size: 24px;
+	text-align: center;
+	color: #9A9A9A;
+	text-decoration: none!important;
+}
+.service-page{
+	padding: 40px 0 80px;
+}
+.service-carousel{
+	height: 490px;
+	overflow: hidden;
+}
+	#servcie-owl-carousel .item img{
+		width: 100%;
+	}
+	#servcie-owl-carousel .owl-stage-outer{
+		height: 100%;
+		height: 460px;
+		overflow: hidden;
+	}
+.gallery{
+	background: #fAfAfA;
+}
+.gallery-grid{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+	.gallery-box{
+		padding: 15px;
+		margin: 15px;
+		display: inline-block;
+		background: #FFFFFF;
+		width: 318px;
+		height: 318px;
+		overflow: hidden;
+	}
+	.gallery-box .gallery-crop{
+		width: 100%;
+		height: 100%;
+		display: block;
+		overflow: hidden;
+		background: #EEEEEE;
+		float: left;
+	}
+		.gallery-box .gallery-crop img{
+			min-width:100%;
+			min-height: 100%;
+			max-width: 120%;
+		}
+	.gallery-box .gallery-label{
+		width: 100%;
+		height: 100%;
+		float: left;
+		margin-top: -100%;
+		background: rgba(255,255,255,0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		-transition:all 0.3s ease-in-out;
+		line-height: 1;
+		color: #444444;
+	}
+		.gallery-box .gallery-label-text{
+			width: 75%;
+			text-align: center;
+		    display: block;
+		    font-size: 36px;
+		    letter-spacing: 2px;
+		}
+	.gallery-box:hover .gallery-label{
+		opacity: 1;
+	    line-height: 1.3;
+	}

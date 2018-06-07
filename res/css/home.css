@@ -4,7 +4,6 @@
 	margin-top: 80px;
 }
 	.intro-title{
-		font-family: 'Open Sans Condensed', sans-serif;
 		font-weight: 300;
 		font-size: 70px;
 		line-height: 70px;
@@ -55,7 +54,7 @@
 }
 	.promo .content{
 		height: 100%;
-		background: rgba(88, 63, 24, 0.8);
+		background: rgba(133, 68, 154, 0.5);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -80,5 +79,25 @@
 		height: 100%;
 	}
 .collage{
-
+	padding:0 0 100px;
+	background: #FFFFFF;
 }
+	.collage .wrapper{
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	.collage-box{
+		text-align: center;
+	}
+	.collage-box img{
+		width: 95%;
+	}
+	.collage-box h2,p{
+		max-width: 90%;
+		margin: 0 auto;
+	}
+	.collage-box h2{
+		padding: 15px 0;
+		font-size: 24px;
+		color:#d9953a;
+	}
