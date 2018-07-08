@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	<title>DEW</title>
+	<title>Destination Events & Weddings</title>
 
 	<link rel="stylesheet" type="text/css" href="res/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -27,7 +27,7 @@
 			<div class="gallery-grid">
 				<a href="#" class="gallery-box" data-galley='gal1'>
 					<span class="gallery-crop"><img src="res/images/gallery/wedding.jpg"></span>
-					<span class="gallery-label"><span class="gallery-label-text">WEDDING<br/>AT KOCHI</span></span>
+					<span class="gallery-label"><span class="gallery-label-text">GROOM<br/>WEDS<br/>BRIDE</span></span>
 				</a>
 				<a href="#" class="gallery-box" data-galley='gal2'>
 					<span class="gallery-crop"><img src="res/images/gallery/wedding.jpg"></span>
@@ -163,6 +163,7 @@
 		    </div>
 		</div>
 	</div>
+	
 	<div class="header">
 		<div class="header-content">
 			<a href="index.html"><img src="res/images/dew_logo_header.jpg"/></a>
@@ -173,8 +174,14 @@
 				<li>
 					<a href="about.html">About</a>
 				</li>
-				<li>
+				<li class="sub">
 					<a href="services.html">Services</a>
+					<ul class="sub-nav">
+						<li><a href="services-wedding.html">Wedding</a></li>
+						<li><a href="services-wedding.html">FUNCTIONS</a></li>
+						<li><a href="services-wedding.html">HOUSE WARMING</a></li>
+						<li><a href="services-wedding.html">Wedding</a></li>
+					</ul>
 				</li>
 				<li class="selected">
 					<a href="gallery.html">Gallery</a>
@@ -183,10 +190,16 @@
 					<a href="contact.html">Contact</a>
 				</li>
 			</ul>
+
+			<span class="humburger inactive"><i class="fas fa-bars"></i><i class="fas fa-times"></i></span>
 		</div>
 	</div>
+
+	
 	<script src="res/js/jquery-3.3.1.min.js"></script>
 	<script src="res/js/bootstrap.min.js"></script>
+	<script src="res/js/script.js"></script>
+	
 
 	<!-- #region Jssor Slider Begin -->
     <!-- Generator: Jssor Slider Maker -->
@@ -244,18 +257,17 @@
             var MAX_WIDTH = 980;
 
             function ScaleSlider() {
-                var containerElement = jssor_1_slider.$Elmt.parentNode;
-                var containerWidth = containerElement.clientWidth;
+                var parentWidth = $('.slide-container').width();
+                var parentHeight = $('.slide-container').height();
 
-                if (containerWidth) {
-
-                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-                    jssor_1_slider.$ScaleWidth(expectedWidth);
-                }
+		       if (parentWidth) {
+	                jssor_1_slider.$ScaleWidth(parentWidth);
+	                
+	            }
                 else {
                     window.setTimeout(ScaleSlider, 30);
                 }
+
             }
 
             ScaleSlider();

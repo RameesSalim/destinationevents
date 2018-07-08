@@ -1,11 +1,15 @@
 .intro{
 	height: 600px;
-	margin-top: 80px;
+	min-height: 100vh;	
 }
 	.intro-content{
 		z-index: 1;
 		background: rgba(0,0,0,0.8);
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	.intro-title{
 		font-weight: 300;
@@ -14,14 +18,13 @@
 		padding-top: 100px;
 	}
 	.intro p{
-		font-size: 15px;
+		font-size: 18px;
 		padding-top: 20px;
-		margin: 0 auto;
 		max-width: 900px;
 		font-weight: 300;
 	}
 	.intro a.int{
-		margin-top: 30px;
+		margin: 30px 10px 0;
 		display: inline-block;
 		text-decoration: none;
 	}
@@ -33,6 +36,7 @@
 	z-index: -1;
 	width: 100%;
 	height: 100%;
+	min-height: 100vh;
 	background-size: cover;
 	background-position: center center;
 }
@@ -43,17 +47,17 @@
 	}
 .about{
 	background: rgb(41, 41, 41);
-	padding: 80px 0;
+	padding: 140px 0;
 }
 	.about h5{
-		font-size: 15px;
+		font-size: 34px;
 		letter-spacing: 3px;
 	}
 	.about p{
 		max-width: 800px;
 		margin: 20px auto;
-		font-size: 14px;
-		line-height: 2;
+		font-size: 18px;
+		line-height: 1.5;
 		color: #DDDDDD;
 	}
 .brief{
@@ -66,8 +70,8 @@
 	.brief p{
 		max-width: 900px;
 		margin: 20px auto 80px;
-		font-size: 14px;
-		line-height: 2;
+		font-size: 18px;
+		line-height: 1.5;
 	}
 .promo{
 	height: 400px;
@@ -97,6 +101,7 @@
 		top: 0;
 		left: 0;
 		height: 100%;
+		min-height: 100vh;
 	}
 .collage{
 	padding:0 0 100px;
@@ -106,18 +111,266 @@
 		max-width: 1000px;
 		margin: 0 auto;
 	}
-	.collage-box{
+
+	.collage-crop{
+		display: inline-block;
+		overflow: hidden;
+		width: 100%;
+		height: 260px;
+	}
+		.collage-box img{
+			width: 100%;
+		}
+
+	.collage-info{
+		display: block;
+		margin-top: -80px;
+		position: relative;
+		-webkit-transition:all 0.3s ease;
+		-moz-transition:all 0.3s ease;
+		-ms-transition:all 0.3s ease;
+		-transition:all 0.3s ease;
+	}
+	.collage-info h2{
+		color: #FFFFFF;
+		font-size: 21px;
+		width: 80%;
+		background-color: rgba(0,0,0,0.3);
+		margin: 0 auto;
+		padding: 12px 5px;
+		text-align: center;
+		border-top-right-radius: 2px;
+		border-top-left-radius: 2px;
+		-webkit-transition:all 0.3s ease;
+		-moz-transition:all 0.3s ease;
+		-ms-transition:all 0.3s ease;
+		-transition:all 0.3s ease;
+		border: 0px solid rgba(255,255,255,0.6);
+	}
+	.collage-box:hover .collage-info{
+		margin-top: -120px;
+	}
+	.collage-box:hover h2{
+		border-width: 2px 0;
+		margin-bottom: 36px;
+	}
+	.collage-info p{
+		font-size: 16px;
+		width: 90%;
+		margin: 0 auto;
+		background-color: #FFEE99;
+		padding: 15px 20px 10px;
 		text-align: center;
 	}
-	.collage-box img{
-		width: 95%;
+	.collage-info::after{
+		width: 0;
+		height: 0;
+		display: block;
+		content: '';
+		border-style: solid;
+		margin: 0 auto;
+		border-width: 30px 120px 0 120px;
+		border-color: #FFEE99 transparent transparent transparent;
+
 	}
-	.collage-box h2,p{
-		max-width: 90%;
+	.collage-info p a.arrow{
+		display: block;
+		color:inherit;
+		margin: 4px 0;
+		font-size: 20px;
+	}
+
+.testimonial{
+		padding:180px 0;
+		background-image:  url(../images/testimonial.jpg);
+		background-size: cover;
+		background-attachment: fixed;
+}
+	.testimonial-block{
+		width: 90%;
+		color: #FFFFFF;
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.testimonial-block h5{
+		font-size: 15px;
+		opacity: 0.7;
+		margin-top: 30px;	
+	}
+	.testimonial .owl-nav{
+		width: 95%;
+		margin:0 auto;
+		color: #FFFFFF;
+		font-size: 60px;
+	}
+	.testimonial .owl-nav button{
+		position: relative;
+		top: -180px;
+	}
+	.testimonial .owl-nav .owl-prev{
+		float: left;
+	}
+	.testimonial .owl-nav .owl-next{
+		float: right;
+	}
+	.testimonial .owl-dots{
+		margin-top: 60px;
+	}
+
+	
+.gallery{
+	background: #FFFFFF;
+	padding: 120px 0;
+}
+	.testimonial-block h1{
+		font-size: 36px;
+	}
+	.gallery .wrapper{
+		max-width: 1000px;
+		width: 80%;
 		margin: 0 auto;
 	}
-	.collage-box h2{
-		padding: 15px 0;
-		font-size: 24px;
-		color:#d9953a;
+		.gallery-box{
+			overflow: hidden;
+		}
+	.gallery h2{
+		margin-bottom: 30px;
 	}
+	@media only screen and (min-width: 540px) {
+		.gallery-grid{
+			display: grid;
+			grid-gap: 6px;	
+			grid-template-columns: 25% 25% 25% 25%;
+		}
+			
+				.gallery-box img{
+					min-width: 100%;
+					min-height: 100%;
+					height: 200px;
+				}
+			.gallery-box.column-2x{
+				grid-row: span 2;
+			}
+		.expand-gallery{
+			display: none;
+		}
+	}
+	@media only screen and (max-width: 1000px) {
+		.gallery-grid{
+			grid-template-columns: 33.33% 33.33% 33.33%;
+		}
+		
+	}
+	@media only screen and (max-width: 540px) {
+		.gallery-grid{
+			display: block;
+		}
+		.gallery-box{
+			margin-bottom: 10px;	
+			display: none;
+		}
+		.gallery-box.column-1x{
+			height: 180px;
+		}
+		.gallery-box.column-2x{
+			height: 340px;
+		}
+		.gallery-box img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.gallery-box:nth-child(-n+3){
+			display:block;
+		}
+		.gallery-grid.expanded .gallery-box{
+			display: block!important;
+		}
+		.expand-gallery{
+			color: #AAAAAA;
+			margin-top: 30px;
+			display: inline-block;
+			padding: 6px 15px;
+			border: 2px solid transparent;
+			text-decoration:none; 
+			border-radius: 3px;
+		}
+		.expand-gallery:hover,.expand-gallery:focus,.expand-gallery:active{
+			color: #AAAAAA;
+			text-decoration:none; 
+			border-color: #CCCCCC;
+		}
+		.gallery{
+			padding: 80px 0;
+		}
+	}
+
+@media only screen and (max-width: 600px) {
+    .intro-title{
+    	max-width: 70%;
+    	margin: 0 auto;
+    	font-size: 28px;
+    	line-height: 38px;
+    }
+
+    .intro-content p{
+    	max-width: 90%;
+    	margin: 0 auto;
+    	font-size: 18px;
+    	line-height: 20px;
+    }
+
+	.intro-content .row{
+		margin: 20px 0 40px;
+	}
+	.intro-content .row a{
+		width: 60%;
+		margin: 5px auto;
+	}
+    h2.bigger{
+    	font-size: 40px;
+    	padding: 0 40px;
+    }
+
+    .brief p{
+    	font-size: 18px;
+    	line-height: 30px;
+    	padding: 0 20px;
+    }
+
+    .collage{
+    	padding: 0 40px;
+    }
+
+	.about{
+		padding: 80px 0;
+	}
+	.about p{
+		padding: 0 25px;
+		font-size: 17px;
+		line-height: 25px;	
+	}
+
+	.about h5{
+		font-size: 32px;
+		width: 80%;
+		margin: 0 auto;	
+	}
+
+    .collage-box{
+    	margin-bottom: 40px;
+    }
+
+
+	.promo{
+		height: 100vh;
+	}
+	.testimonial-block{
+		width: 60%;
+	}
+
+	.testimonial-block h1{
+		font-size: 24px;
+	}
+}

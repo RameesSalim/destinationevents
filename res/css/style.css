@@ -39,15 +39,49 @@ body.noscroll{
 			-ms-transition:all 0.3s ease;
 			-transition:all 0.3s ease;
 			border: 1px solid transparent;
+			margin-bottom:10px;
+			display: inline-block;
 		}
 		.header ul.nav li a:hover{
-			border: 1px solid #904aa3;
+			border-color: #904aa3;
 		}
 		.header ul.nav li.selected a{
 			color: #904aa3;
 			font-weight: bold;
-			border: 1px solid #904aa3;
+			border-color: #904aa3;
 		}
+	.header ul.sub-nav{
+		position: fixed;
+		display: none;
+		top: 0;
+		left: 0;
+		margin: 0;
+		padding: 20px 5px;
+		background: #FFFFFF;
+		border-radius: 3px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+	}
+		.header ul.sub-nav li{
+			display: block;
+		}
+		.header ul.sub-nav li a{
+			border-width:0;
+			padding: 6px 0;
+			width:200px;
+			margin-bottom:0;
+			display: block;
+			text-align: center;
+			font-size: 15px;
+			color:#333333!important;
+			font-weight: normal!important;
+		}
+		.header ul.sub-nav li a:hover{
+			color: #8a10ab;
+			background: #F3F3F3;
+		}
+	.header ul.nav li.sub:hover  ul.sub-nav {display: block;}
+  	ul.sub-nav:hover {display: block;}
+
 .tt1{
 	color: #777777;
 	font-weight: bold;
@@ -155,4 +189,82 @@ footer{
 }
 textarea.textbox{
 	height: 160px;
+}
+
+.humburger{
+	display: none;
+}
+	.humburger .fa-bars{
+		display: none;
+	}
+	.humburger .fa-times{
+		display: block;
+	}
+
+	.humburger.inactive .fa-bars{
+		display: block;
+	}
+	.humburger.inactive .fa-times{
+		display: none;
+	}
+
+
+@media only screen and (max-width: 600px) {
+	.header{
+		height: 60px;
+	}
+	.header .header-content{
+		margin-top: 8px;
+	}
+	.header img{
+		height: 40px;
+	}
+
+    .header ul.nav{
+    	display: none;
+    	position: absolute;
+    	z-index: 999;
+    	width: 85%;
+    	top: 60px;
+    	left: 50%;
+    	transform: translateX(-50%);
+    	background: #FFFFFF;
+    	padding: 8px;
+    	border-radius: 5px;
+    	box-shadow: 0 1px 15px rgba(0,0,0,0.4);
+    }
+	    .header ul.nav li{
+	    	display: block;
+	    	margin: 25px 0;
+	    	width: 100%;
+	    }
+	    .header ul.nav li a{
+	    	border: none!important;
+	    	display: block;
+	    	padding: 5px 30px;
+	    	font-weight: bold;
+	    	font-size: 14px;
+	    }
+
+    .humburger{
+    	display: inline-block;
+    	float: right;
+    	color: #904aa3;
+    	font-size: 22px;
+    	margin-top: 10px;
+    }
+
+	.footer-box{
+		margin-bottom: 30px;
+	}
+	.mobile-only-block{
+		display: block;
+	}
+
+	.contact h5{
+		margin-top: 50px;
+	}
+	.header ul.sub-nav{
+		display: none!important;
+	}
 }
