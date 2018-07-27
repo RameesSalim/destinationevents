@@ -5,11 +5,11 @@ include_once 'res/php/config.php';
 //Login Check
 if($user->is_loggedin()!="")
 {
- $user->redirect('home.php');
+ $user->redirect('admin.php');
 }
 
 //
-if(isset($_POST['login']))
+if(isset($_POST['set']))
 {
 	$error = array();
 	$username=$_POST['username'];
@@ -57,13 +57,27 @@ if(isset($_POST['login']))
 		<div class="page-container">
 			<h1 class="page-heading text-center">LOGIN</h1>
 			<div class="row">
+			
+			<h3><?php 
+			echo $_SESSION['a']."<br>";  echo $_SESSION['b'];
+			
+			?></h3>
+			
 				<div class="col-sm-3 order-sm-1">
 				</div>
 				<div class="col-sm-6 order-sm-1">
-					<form class="contact-form" style="text-align: right;"> 
-						<input type="user" class="textbox" required="required" name="username" placeholder="Username : *">
-						<input type="password" class="textbox" required="required" name="password" placeholder="Password : *">
-						<input class="butn butn-block login" type="submit" name="login" value="Submit">
+				
+					<?php if(isset($display)): ?>
+						<div class="<?php echo $display['1'];?>">
+							<?php echo $display['2']; $error=array();?>
+
+						</div>
+					<?php endif ?>
+
+					<form class="contact-form" style="text-align: right;" method="post"> 
+						<input type="text" class="textbox username" required="required" name="username" placeholder="Username : *">
+						<input type="password" class="textbox password" required="required" name="password" placeholder="Password : *">
+						<input class="butn butn-block set" type="submit" name="set" value="Submit" style="cursor:pointer;">
 					</form>
 				</div>
 				<div class="col-sm-3 order-sm-1">
