@@ -58,10 +58,7 @@ if(isset($_POST['set']))
 			<h1 class="page-heading text-center">LOGIN</h1>
 			<div class="row">
 			
-			<h3><?php 
-			echo $_SESSION['a']."<br>";  echo $_SESSION['b'];
-			
-			?></h3>
+
 			
 				<div class="col-sm-3 order-sm-1">
 				</div>

@@ -55,8 +55,8 @@ class USER
    {
         session_destroy();
         unset($_SESSION['user_session']);
-        return true;
         header("Location:index.php");
+
    }
 }
 
