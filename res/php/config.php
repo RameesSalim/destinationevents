@@ -3,7 +3,7 @@ session_start();
 
 $DB_host = "localhost";
 $DB_user = "root";
-$DB_pass = "admin";
+$DB_pass = "";
 $DB_name = "destination";
 
 try
@@ -18,6 +18,5 @@ catch(PDOException $e)
 include_once 'res/php/login.php';
 
 $user = new USER($DB_con);
-
 
 ?>

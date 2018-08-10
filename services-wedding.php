@@ -1,3 +1,6 @@
+<?php
+	require('res/php/components/main-header.php');
+?>
 <!DOCTYPE html>
 <html lang="en"></html>
 <head>
@@ -77,36 +80,7 @@
 		</div>
 	</footer>
 	
-	<div class="header">
-		<div class="header-content">
-			<a href="index.html"><img src="res/images/dew_logo_header.jpg"/></a>
-			<ul class="nav">
-				<li>
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="about.html">About</a>
-				</li>
-				<li class="sub selected">
-					<a href="services.html">Services</a>
-					<ul class="sub-nav">
-						<li><a href="services-wedding.html">Wedding</a></li>
-						<li><a href="services-wedding.html">FUNCTIONS</a></li>
-						<li><a href="services-wedding.html">HOUSE WARMING</a></li>
-						<li><a href="services-wedding.html">Wedding</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="gallery.html">Gallery</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-			</ul>
-
-			<span class="humburger inactive"><i class="fas fa-bars"></i><i class="fas fa-times"></i></span>
-		</div>
-	</div>
+	<?=getHeader('services')?>
 
 	<script src="res/js/jquery-3.3.1.min.js"></script>
 	<script src="res/js/bootstrap.min.js"></script>

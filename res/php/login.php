@@ -23,13 +23,14 @@ class USER
              if(strcmp($upass,$userRow['password']))
              {
                 $_SESSION['user_session'] = $userRow['username'];
+                $_SESSION['user_session_id'] = $userRow['id'];
              }
              else
              {
                 return false;
                 $_SESSION['b']="bbbbb";
              }
-          }
+          } 
        }
        catch(PDOException $e)
        {
@@ -41,9 +42,12 @@ class USER
    {
       if(isset($_SESSION['user_session']))
       {
-         return true;
+         return true; 
 
       }
+   }
+   public function get_admin_id(){
+      return $_SESSION['user_session_id'];
    }
  
    public function redirect($url)

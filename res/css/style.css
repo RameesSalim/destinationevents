@@ -41,6 +41,7 @@ body.noscroll{
 			border: 1px solid transparent;
 			margin-bottom:10px;
 			display: inline-block;
+			margin: 0 1px;
 		}
 		.header ul.nav li a:hover{
 			border-color: #904aa3;
@@ -51,36 +52,42 @@ body.noscroll{
 			border-color: #904aa3;
 		}
 	.header ul.sub-nav{
-		position: fixed;
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
 		display: none;
-		top: 0;
-		left: 0;
 		margin: 0;
-		padding: 20px 5px;
+		z-index: 999;;
+		padding: 10px 0;
 		background: #FFFFFF;
 		border-radius: 3px;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+		box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 	}
 		.header ul.sub-nav li{
 			display: block;
 		}
 		.header ul.sub-nav li a{
 			border-width:0;
-			padding: 6px 0;
-			width:200px;
+			padding: 6px 40px 6px 20px;
 			margin-bottom:0;
 			display: block;
-			text-align: center;
 			font-size: 15px;
 			color:#333333!important;
-			font-weight: normal!important;
+			font-weight: normal!important;	
+			-webkit-transition:all 0.3s ease;
+			-moz-transition:all 0.3s ease;
+			-ms-transition:all 0.3s ease;
+			-transition:all 0.3s ease;
 		}
 		.header ul.sub-nav li a:hover{
 			color: #8a10ab;
-			background: #F3F3F3;
+			background: #F5F5F5;
 		}
-	.header ul.nav li.sub:hover  ul.sub-nav {display: block;}
-  	ul.sub-nav:hover {display: block;}
+	.header ul.nav li.sub:hover  ul.sub-nav, ul.sub-nav:hover {
+		  visibility: visible;
+		  opacity: 1;
+		  display: block;
+	}
 
 .tt1{
 	color: #777777;

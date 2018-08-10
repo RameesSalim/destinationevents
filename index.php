@@ -1,4 +1,7 @@
-
+<?php
+	require('res/php/config.php');
+	require('res/php/components/main-header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,25 +104,28 @@
 	<section class="testimonial">
 		<div class="owl-carousel owl-theme testimonial-carousel">
 		
-		  <div class="item"> 
-			<div class="testimonial-block">
-				<h1>I am particularly grateful to Destination Events who have worked so hard to put on this spectacular feast and to make tonight possible</h1>
-				<h5>LEXNEM IPSUM</h5>
-			</div>
-		  </div>
+			<?php
+
+				$testimonialQuery = $DB_con->query("SELECT * FROM `public_data` WHERE `type`='testimonial' LIMIT 1");
+				$testimonialRow = $testimonialQuery->fetch();
+				$testimonials = json_decode($testimonialRow['data']);
+
+				foreach ($testimonials as $testimonialDatas) {
+					if(trim($testimonialDatas[0]) == "" || trim($testimonialDatas[1]) == " "){continue;}
+					/* 0 -> User , 1 -> Message */
+					echo '
+					<div class="item"> 
+						<div class="testimonial-block">
+							<h1>'.$testimonialDatas[1].'</h1>
+							<h5>'.$testimonialDatas[0].'</h5>
+						</div>
+					</div>
+					
+					';
+				}
+			?>
 		
-		  <div class="item"> 
-			<div class="testimonial-block">
-				<h1>I am particularly grateful to Destination Events who have worked so hard to put on this spectacular feast and to make tonight possible</h1>
-				<h5>LEXNEM IPSUM</h5>
-			</div>
-		  </div>
-		
-		  <div class="item"> 
-			<div class="testimonial-block">
-				<h1>I am particularly grateful to Destination Events who have worked so hard to put on this spectacular feast and to make tonight possible</h1>
-				<h5>LEXNEM IPSUM</h5>
-			</div>
+
 		  </div>
 		
 
@@ -132,47 +138,47 @@
 			<div class="gallery-grid">
 				<div class="gallery-box column-1x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/01.jpg">
+						<img src="res/images/home-photos/grid1.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-1x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/03.jpg">
+						<img src="res/images/home-photos/grid2.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-2x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/04.jpg">
+						<img src="res/images/home-photos/grid3.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-1x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/03.jpg">
+						<img src="res/images/home-photos/grid4.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-2x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/05.jpg">
+						<img src="res/images/home-photos/grid5.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-1x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/02.jpeg">
+						<img src="res/images/home-photos/grid6.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-2x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/06.jpg">
+						<img src="res/images/home-photos/grid7.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-1x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/02.jpeg">
+						<img src="res/images/home-photos/grid8.jpg">
 					</a>
 				</div>
 				<div class="gallery-box column-1x">
 					<a href="javascript:void(0)">
-						<img src="res/images/home-photos/01.jpg">
+						<img src="res/images/home-photos/grid9.jpg">
 					</a>
 				</div>
 			</div>
@@ -207,36 +213,10 @@
 			</div>	
 		</div>
 	</footer>
-	<div class="header">
-		<div class="header-content">
-			<a href="index.html"><img src="res/images/dew_logo_header.jpg"/></a>
-			<ul class="nav">
-				<li class="selected">
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="about.html">About</a>
-				</li>
-				<li class="sub">
-					<a href="services.html">Services</a>
-					<ul class="sub-nav">
-						<li><a href="services-wedding.html">WEDDING</a></li>
-						<li><a href="services-wedding.html">FUNCTIONS</a></li>
-						<li><a href="services-wedding.html">HOUSE WARMING</a></li>
-						<li><a href="services-wedding.html">WEDDING</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="gallery.html">Gallery</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-			</ul>
 
-			<span class="humburger inactive"><i class="fas fa-bars"></i><i class="fas fa-times"></i></span>
-		</div>
-	</div>
+	<?=getHeader('home')?>
+
+
 	<script src="res/js/jquery-3.3.1.min.js"></script>
 	<script src="res/js/bootstrap.min.js"></script>
 	<script src="res/js/script.js"></script>
